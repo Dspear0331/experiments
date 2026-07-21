@@ -1,0 +1,41 @@
+#!/bin/bash
+# Usage: ./git_env_setup <project_name>
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+#check project name
+if [  -z "$1" ]; then
+    echo "Error: project name expected none provided"
+    exit 1
+fi
+#set github default repo view to private
+VIEW="private"
+if [ "$2" == "public" ]; then
+    VIEW="public"
+fi
+
+PROJECT_NAME="$1"
+mkdir -p "$PROJECT_NAME"
+cd "$PROJECT_NAME"
+
+#create git enviroment 
+git init
+cat << EOF >> .gitignore
+.env
+.venv
+.config
+__pycache__/
+EOF
+
+#create virtual enviroment and activate 
+python3 -m venv .venv
+source .venv/bin/activate
+touch .config .env
+
+#stage and commit
+git add .
+git commit -m "Initial commit: Add gitignore"
+
+#create github repo and push intial commit
+gh repo create "$PROJECT_NAME" --"$VIEW" --source=. --remote=origin --push
