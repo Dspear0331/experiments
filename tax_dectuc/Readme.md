@@ -39,8 +39,8 @@ A lightweight Python desktop utility that automates the extraction and identific
 
     pip install pdfplumber pyinstaller
 
-Usage
-
+### Usage
+---
 Run the Python script directly:
 Bash
 
@@ -60,7 +60,7 @@ Options Breakdown:
 
     --noconsole: Suppresses the terminal/console window on launch, displaying only Tkinter GUI alerts.
 
-Output
+### Output
 
 The compiled executable will be located in the dist/ directory:
 
