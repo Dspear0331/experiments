@@ -5,7 +5,12 @@ Markdown
 A lightweight Python desktop utility that automates the extraction and identification of tax-deductible expenses from PDF bank statements (specifically tailored for therapy practices and healthcare providers).
 
 ---
+## ⚠️ Compatibility & Parsing Disclaimer
 
+- **Tested Bank:** This script has been customized and verified to work with **Navy Federal Credit Union (NFCU)** bank statements.
+- **Regex Format:** It relies on a specific line pattern (`MM-DD Description`) to capture transaction entries. 
+- **Other Banks:** Statements from other financial institutions (e.g., Chase, Bank of America, Wells Fargo) may use different date formats, column layouts, or line-break structures and may not parse correctly without adjusting the regex pattern (`pattern = r'^(\d{2}-\d{2})\s*(.*)'`).
+- 
 ## Features
 
 - **Interactive File Dialog:** Uses `tkinter` to prompt for PDF statement selection.
