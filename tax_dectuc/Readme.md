@@ -67,4 +67,4 @@ The compiled executable will be located in the dist/ directory:
     Windows: dist/tax.exe
 
     macOS / Linux: dist/tax
-
+### ***Note:*** If the file from running the .exe or if you run the .py directly on second run it the .txt file will be overwritten. Simply rename or remove
