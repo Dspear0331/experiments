@@ -42,18 +42,18 @@ A lightweight Python desktop utility that automates the extraction and identific
 ### Usage
 ---
 Run the Python script directly:
-Bash
+```Bash
 
 python tax.py
-
+```
 A file picker prompt will appear. Select your bank statement (.pdf), and the script will process the file and display the output results.
 Building a Standalone Executable
 
 To generate a standalone executable file so the script can run without requiring Python:
-Bash
+```Bash
 
 pyinstaller --onefile --noconsole tax.py
-
+```
 Options Breakdown:
 
     --onefile: Packages the application and all dependencies into a single output executable.
