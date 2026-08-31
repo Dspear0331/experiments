@@ -1,6 +1,7 @@
 import pdfplumber
 import re
 import tkinter as tk 
+import datetime
 from tkinter import filedialog, messagebox
 
 # Hidden tk root window
@@ -45,7 +46,8 @@ THERAPY_EXPENSE_KEYWORDS = [
     "COMCAST", "SPECTRUM", "CONED"
 ]
 
-full_text = ""
+timestamp=datetime.datetime.now().strftime("%d-%H-%M")
+full_text=""
 pattern = r'^(\d{2}-\d{2})\s*(.*)'
 
 if file_path:
@@ -76,7 +78,7 @@ if file_path:
 
         # Output logic: Save results to a text file in the same directory
         if deductables:
-            output_path = file_path.replace(".pdf", "_deductibles.txt")
+            output_path = file_path.replace(".pdf", f"{timestamp}_deductibles.txt")
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write("FOUND DEDUCTIBLE EXPENSES:\n")
                 f.write("=" * 40 + "\n")
