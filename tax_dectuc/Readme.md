@@ -67,4 +67,4 @@ The compiled executable will be located in the dist/ directory:
     Windows: dist/tax.exe
 
     macOS / Linux: dist/tax
-### ***Note:*** Fixed the output file being overwritten on second run using a datetime using hour minute day format
+### ***Note:*** Fixed the output file being overwritten on second run using a datetime using day hour minute format could use a counter to just add one each variation
